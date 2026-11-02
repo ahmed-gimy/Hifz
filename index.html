@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="حفظ القرآن">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
 <title>متابعة الحفظ</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -155,6 +156,7 @@ $('app').addEventListener('click',e=>{
 });
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
 render();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>
 </html>
